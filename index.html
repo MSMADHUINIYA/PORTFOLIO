@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background:#020617;
+  color:white;
+}
+
+/* Navbar */
+.navbar{
+  text-align:center;
+  padding:20px;
+  border-bottom:1px solid #1e293b;
+}
+.navbar h1{
+  color:#38bdf8;
+}
+
+/* Hero */
+.hero{
+  text-align:center;
+  padding:40px 20px;
+}
+.hero p{
+  color:#94a3b8;
+}
+
+/* Details */
+.details{
+  max-width:600px;
+  margin:auto;
+  padding:20px;
+}
+
+/* Card */
+.card{
+  background:#020617;
+  border:1px solid #1e293b;
+  border-radius:12px;
+  margin-bottom:15px;
+  overflow:hidden;
+}
+
+/* Button */
+.card-title{
+  width:100%;
+  padding:16px 18px;
+  background:none;
+  border:none;
+  color:white;
+  text-align:left;
+  cursor:pointer;
+  font-size:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.card-title::after{
+  content:"+";
+  font-size:18px;
+}
+
+.card-title.active::after{
+  content:"-";
+}
+
+/* Content */
+.card-content{
+  max-height:0;
+  overflow:hidden;
+  padding:0 18px;
+  transition:max-height 0.4s ease;
+}
+
+.card-content p{
+  padding:10px 0;
+  color:#cbd5f5;
+  border-bottom:1px dashed #1e293b;
+}
+.card-content p:last-child{
+  border-bottom:none;
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <h1>Madhu</h1>
+</header>
+
+<section class="hero">
+  <h2>Frontend Developer</h2>
+  <p>Click below to know more about me</p>
+</section>
+
+<section class="details">
+
+  <div class="card">
+    <button class="card-title">👤 My Details</button>
+    <div class="card-content">
+      <p><strong>Name:</strong> M S Madhu Iniya</p>
+      <p><strong>Role:</strong> Frontend Developer</p>
+      <p><strong>College:</strong> Bannari Amman Institute of Technology</p>
+      <p><strong>Skills:</strong> HTML, CSS, JavaScript</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <button class="card-title">📂 Projects</button>
+    <div class="card-content">
+      <p>Responsive Portfolio Website</p>
+      <p>Music Player UI</p>
+      <p>Chat Application UI</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <button class="card-title">📞 Contact</button>
+    <div class="card-content">
+      <p>Email: madhuiniyams.cb24@bitsathy.ac.in</p>
+      <p>Phone: 7339075847</p>
+    </div>
+  </div>
+
+</section>
+
+<script>
+const titles = document.querySelectorAll(".card-title");
+
+titles.forEach(title => {
+  title.addEventListener("click", () => {
+
+    titles.forEach(t => {
+      if(t !== title){
+        t.classList.remove("active");
+        t.nextElementSibling.style.maxHeight = null;
+      }
+    });
+
+    const content = title.nextElementSibling;
+    title.classList.toggle("active");
+
+    if(content.style.maxHeight){
+      content.style.maxHeight = null;
+    }else{
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
+</script>
+
+</body>
+</html>

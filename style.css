@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #020617, #020617);
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  padding: 20px;
+  text-align: center;
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
+}
+
+.navbar h1 {
+  color: #38bdf8;
+  letter-spacing: 1px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h2 {
+  font-size: 28px;
+}
+
+.hero p {
+  margin-top: 10px;
+  color: #94a3b8;
+}
+
+/* Details Section */
+.details {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Card */
+.card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.15);
+}
+
+/* Card Title */
+.card-title {
+  width: 100%;
+  padding: 18px 20px;
+  background: linear-gradient(90deg, #020617, #020617);
+  border: none;
+  color: white;
+  text-align: left;
+  font-size: 17px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-title::after {
+  content: "➕";
+  font-size: 16px;
+  transition: transform 0.3s;
+}
+
+.card-title.active::after {
+  content: "➖";
+}
+
+/* Card Content */
+.card-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  background: #020617;
+  transition: max-height 0.5s ease;
+}
+
+.card-content p {
+  padding: 10px 0;
+  color: #cbd5f5;
+  border-bottom: 1px dashed #1e293b;
+}
+
+.card-content p:last-child {
+  border-bottom: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 22px;
+  }
+}
